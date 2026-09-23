@@ -1,10 +1,10 @@
-# WireOS
+# SparkOS
 
-**The main repo for WireOS.**
+**The main repo for SparkOS.**
 
-WireOS serves as a nice, stable, and maintained base for custom Anki Vector firmware.
+SparkOS is based on WireOS and is just a playground for me to explore my vector and his development a bit more. I recommend that you dont install this although if you want to go ahead. I will try to never publish unfinished/broken stuff here
 
-This builds the OS, the /anki programs (`wire-os-victor`), and puts it all into a final OTA. This repo can be thought of as `wire-os-oelinux`.
+This builds the OS, the /anki programs (`spark-os-victor`), and puts it all into a final OTA. This repo can be thought of as `spark-os-oelinux`.
 
 ## Vector
 
@@ -18,9 +18,9 @@ This is based off of the leaked [vicos-oelinux](https://github.com/kercre123/vic
 
 ## Prebuilt OTA
 
-WireOS is in the Custom Firmware category of [https://websetup.froggitti.net/](https://websetup.froggitti.net/). Put your unlocked bot into recovery mode (hold the button for 15 seconds on the charger), head to the site, choose the Custom Firmware stack, connect to the bot, choose WireOS, then go through the process.
+SparkOS is in the Custom Firmware category of **(nowhere yet but soon i might "try" to host something just for fun)**. Put your unlocked bot into recovery mode (hold the button for 15 seconds on the charger), head to the site, choose the Custom Firmware stack, connect to the bot, choose SparkOS, then go through the process.
 
-The actual latest dev OTA is available here: [http://ota.pvic.xyz/vic/latest/dev.ota](http://ota.pvic.xyz/vic/latest/dev.ota)
+The actual latest dev OTA is available here: **(i will try to make something soon. As of right now the only way is to build this yourself)**
 
 ## Build
 
@@ -63,8 +63,8 @@ sudo chmod 660 /var/run/docker.sock
 3. Clone and build:
 
 ```
-git clone https://github.com/os-vector/wire-os --recurse-submodules
-cd wire-os
+git clone https://github.com/LaziTeto/spark-os/ --recurse-submodules
+cd spark-os
 ./build/build.sh -bt dev -v <build-increment>
 # build-increment can be any number you want. it will be the final number of the OTA: 3.0.1.<incrememnt>.ota
 ```
@@ -89,8 +89,8 @@ sudo apt install -y build-essential chrpath cpio debianutils diffstat expect fil
 
 3. Clone and build (***with -nd flag***):
 ```
-git clone https://github.com/os-vector/wire-os --recurse-submodules
-cd wire-os
+git clone https://github.com/LaziTeto/spark-os/ --recurse-submodules
+cd spark-os
 ./build/build.sh -nd -bt dev -v <build-increment>
 # build-increment can be any number you want. it will be the final number of the OTA: 3.0.1.<incrememnt>.ota
 ```
@@ -123,17 +123,12 @@ cd wire-os
 
 ## Development path
 
-- **Most work should be done in `wire-os-victor`. Generally, that's all you need to have cloned. That can be worked on on a less beefy Linux laptop or M-series MacBook. If you have a modern base WireOS OTA installed; you can clone `wire-os-victor`, make changes, build that standalone, and deploy that to your robot. This repo is more meant to be cloned to a build server, and built less often.**
+**(didnt make a dev path yet but i will just edit this :P)**
+- **Most work should be done in `spark-os-victor`. Generally, that's all you need to have cloned. That can be worked on on a less beefy Linux laptop or M-series MacBook. If you have a modern base SparkOS OTA installed; you can clone `spark-os-victor`, make changes, build that standalone, and deploy that to your robot. This repo is more meant to be cloned to a build server, and built less often.**
 
 ## Rebuilds
 
 - I try to make it so whenever changes are made, you don't need to do a full rebuild; however, due to this being synced up to poky's `master` branch, behavior can be unpredictable. **Due to this, I recommend doing a full rebuild each time.** You can clean your build directory by running `sudo rm -rf poky/build/tmp-glibc poky/build/cache poky/build/sstate-cache poky/build/downloads`.
-
-## Donate
-
-If you want to :P
-
-[![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoffee.com/kercre123)
 
 ## Differences compared to normal Vector FW
 
