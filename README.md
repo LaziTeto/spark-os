@@ -39,7 +39,6 @@ The actual latest dev OTA is available here: **(i will try to make something soo
 - It is recommended to build SparkOS on an x86_64 CPU via the Docker method.
 - If you want to build on aarch64, you have to go the bare metal route. The Docker method cannot be used for aarch64 build machines yet.
 - **Asahi Linux cannot be used to build SparkOS.** 99% of the build happens, but it fails during one of the final in-image configuration stages due to an Asahi-specific issue with `qemu-arm`.
-    -   I had success building WireOS in a Debian VM on my M3 Macbook Air using UTM. A QEMU+KVM VM in Asahi would probably work too.
 - **Click an option below.**
 
 <details>
