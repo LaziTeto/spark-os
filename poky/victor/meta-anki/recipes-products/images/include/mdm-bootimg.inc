@@ -29,10 +29,10 @@ EXTRA_IMAGE_FEATURES += "read-only-rootfs"
 
 TARGET_NUM = "${@('0' if d.getVar('DEV') == '1' else '1' if d.getVar('OSKR') == '1' else '9' if d.getVar('USER_BUILD') == '1' else '0')}"
 
-WHAT_OS_AM_I = "wire-os_wire_os"
+WHAT_OS_AM_I = "spark-os_spark_os"
 
 # VV | CFW DEVS, CHANGE THIS | VV
-PRETTY_OS_NAME = "WireOS"
+PRETTY_OS_NAME = "SparkOS"
 
 gen_buildprop:append() {
    mkdir -p ${IMAGE_ROOTFS}/cache
